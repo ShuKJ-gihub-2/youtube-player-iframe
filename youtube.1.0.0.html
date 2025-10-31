@@ -1,0 +1,19 @@
+<iframe id="youtube" style="width:100%; height:95%; top:auto;" frameborder="0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div>
+<input type="text" id="text01" placeholder="ここに動画urlを入力">
+<button onclick="oshita()">実行</button>
+</div>
+<script type="text/javascript">
+input = document.getElementById('text01');
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+  oshita();
+ }
+});
+
+function oshita() {
+videoUrl = input.value;
+videoId = videoUrl.split('v=')[1].split('&')[0]
+document.getElementById('youtube').src = "https://youtube.com/embed/" + videoId;
+}
+</script>
